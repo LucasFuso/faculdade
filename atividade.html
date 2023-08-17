@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Alteração de Texto</title>
+
+  <script>
+    function alterarTexto() {
+      var elementoTexto = document.getElementById("texto");
+      elementoTexto.innerHTML = "Tudo bem?";
+    }
+    
+  </script>
+</head>
+<body>
+  <h1 id="texto">Olá</h1>
+  <button onclick="alterarTexto()">Clique aqui para alterar o texto</button>
+</body>
+</html>
+
+<p></p>
+<p></p>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabuada do 8</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody id="tabuada">
+    </tbody>
+  </table>
+<p></p>
+  <script>
+    var numero = 8;
+    var tabuadaElement = document.getElementById("tabuada");
+
+    for (var i = 1; i <= 10; i++) {
+      var resultado = numero * i;
+
+      var linha = document.createElement("tr");
+
+      var colunaNumero = document.createElement("td");
+      colunaNumero.textContent = numero + " x " + i;
+
+      var colunaResultado = document.createElement("td");
+      colunaResultado.textContent = resultado;
+
+      linha.appendChild(colunaNumero);
+      linha.appendChild(colunaResultado);
+
+      tabuadaElement.appendChild(linha);
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boas-vindas</title>
+</head>
+<body>
+  <label for="sexo">Digite o sexo (M/F): </label>
+  <input type="text" id="sexo" />
+
+  <button onclick="exibirMensagem()">Enviar</button>
+
+  <script>
+    function exibirMensagem() {
+      var sexo = document.getElementById("sexo").value;
+
+      switch (sexo) {
+        case "M":
+          alert("Seja bem-vindo!");
+          break;
+        case "F":
+          alert("Seja bem-vinda!");
+          break;
+        default:
+          alert("Opção inválida. Digite 'm' para masculino ou 'f' para feminino.");
+      }
+    }
+  </script>
+</body>
+</html>
+<p></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disciplinas do Semestre</title>
+</head>
+<body>
+  <h1>Disciplinas do Semestre</h1>
+
+  <ul id="disciplinas"></ul>
+
+  <script>
+    var disciplinas = ["ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES	", "ECONOMIA E SOCIEDADE", "FUNDAMENTOS DE PROGRAMAÇÃO PARA INTERNET", "LEGISLAÇÃO APLICADA A TECNOLOGIA DA INFORMAÇÃO", "LINGUAGEM E INTERACAO", "	EXTENSÃO I"];
+
+    var disciplinasList = document.getElementById("disciplinas");
+
+    for (var i = 0; i < disciplinas.length; i++) {
+      var disciplina = document.createElement("li");
+      disciplina.textContent = disciplinas[i];
+      disciplinasList.appendChild(disciplina);
+    }
+  </script>
+</body>
+</html>
+<p></p>
+<p></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disciplinas do Semestre</title>
+</head>
+<body>
+  <h1>Disciplinas do Semestre</h1>
+
+  <ul id="disciplinas"></ul>
+
+  <script>
+    var disciplinas = ["ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES	", "ECONOMIA E SOCIEDADE", "FUNDAMENTOS DE PROGRAMAÇÃO PARA INTERNET", "LEGISLAÇÃO APLICADA A TECNOLOGIA DA INFORMAÇÃO", "LINGUAGEM E INTERACAO", "	EXTENSÃO I"];
+
+    var disciplinasList = document.getElementById("disciplinas");
+    
+    var i = 0;
+    while (i < disciplinas.length) {
+      var disciplina = document.createElement("li");
+      disciplina.textContent = disciplinas[i];
+      disciplinasList.appendChild(disciplina);
+      i++;
+    }
+  </script>
+</body>
+</html>
+<p></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Características do Carro</title>
+</head>
+<body>
+  <h1>Características do Carro</h1>
+
+  <ul id="caracteristicas"></ul>
+
+  <script>
+    // Definindo a classe Carro
+    class Carro {
+      constructor(marca, modelo, ano, cor, potencia) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+        this.potencia = potencia;
+      }
+    }
+
+    // Criando uma instância do Carro
+    var meuCarro = new Carro("Toyota", "Corolla", 2022, "Prata", 150);
+
+    var caracteristicasList = document.getElementById("caracteristicas");
+
+    for (var propriedade in meuCarro) {
+      if (meuCarro.hasOwnProperty(propriedade)) {
+        var caracteristica = document.createElement("li");
+        caracteristica.textContent = propriedade + ": " + meuCarro[propriedade];
+        caracteristicasList.appendChild(caracteristica);
+      }
+    }
+  </script>
+</body>
+</html>
+<p></p>
